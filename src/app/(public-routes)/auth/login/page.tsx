@@ -11,9 +11,10 @@ export default function Login() {
     Cookies.set("achird-token", "1234");
     router.push("/settings");
   }
+
   return (
-    <AuthButton onClick={handleLogin}>
-      <p>Entrar com o github</p>
-    </AuthButton>
+    <button onClick={handleLogin} className="btn btn-primary">
+      Entrar com o github
+    </button>
   );
 }
