@@ -161,41 +161,18 @@ export default async function Profile({
               Onde me encontrar
             </h2>
             <div className="flex flex-col gap-4">
-              <div className="flex p-8 items-center justify-between rounded-xl shadow-xl bg-base-200">
-                <div>
+              <div className="flex flex-col md:flex-row  p-8 items-center justify-between rounded-xl shadow-xl bg-base-200">
+                <div className="overflow-hidden">
                   <h4 className="card-title">Github</h4>
-                  <p className="tooltip tooltip-right w-min" data-tip="Copiar">
+                  <p
+                    className="tooltip tooltip-right w-min truncate text-ellipsis break-all"
+                    data-tip="Copiar"
+                  >
                     <a>https://github.com/jaianeoliveira</a>
                   </p>
                 </div>
-                <div className="">
-                  <a target="_blank" className="btn btn-primary">
-                    Visitar
-                  </a>
-                </div>
-              </div>
-              <div className="flex p-8 items-center justify-between rounded-xl shadow-xl bg-base-200">
-                <div>
-                  <h4 className="card-title">Github</h4>
-                  <p className="tooltip tooltip-right w-min" data-tip="Copiar">
-                    <a>https://github.com/jaianeoliveira</a>
-                  </p>
-                </div>
-                <div className="">
-                  <a target="_blank" className="btn btn-primary">
-                    Visitar
-                  </a>
-                </div>
-              </div>
-              <div className="flex p-8 items-center justify-between rounded-xl shadow-xl bg-base-200">
-                <div>
-                  <h4 className="card-title">Github</h4>
-                  <p className="tooltip tooltip-right w-min" data-tip="Copiar">
-                    <a>https://github.com/jaianeoliveira</a>
-                  </p>
-                </div>
-                <div className="">
-                  <a target="_blank" className="btn btn-primary">
+                <div className="flex w-full justify-end mt-2">
+                  <a className="btn btn-primary" href="https://github.com">
                     Visitar
                   </a>
                 </div>

@@ -14,7 +14,7 @@ export function ThemeProvider(props: PropsWithChildren) {
   }
 
   return (
-    <NextThemeProvider enableSystem={true} attribute="class">
+    <NextThemeProvider enableSystem={true} attribute="data-theme">
       {props.children}
     </NextThemeProvider>
   );
