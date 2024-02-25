@@ -1,12 +1,11 @@
 "use client";
-import Button from "@/components/UI/Button";
-import Header from "@/components/UI/Header";
 import { ConfigContext } from "@/contexts/ConfigContext";
 import Image from "next/image";
 import Link from "next/link";
 import { Sidebar } from "primereact/sidebar";
 import { PropsWithChildren, useContext } from "react";
 import AchirdLogo from "public/logo.svg";
+import Cookies from "js-cookie";
 
 export default function PrivateLayout({ children }: PropsWithChildren) {
   const {
@@ -49,7 +48,14 @@ export default function PrivateLayout({ children }: PropsWithChildren) {
                 <a>Minha página</a>
               </li>
               <li>
-                <a>Sair</a>
+                <button
+                  onClick={() => {
+                    Cookies.remove("ACHIRD_TOKEN");
+                    window && window.location.reload();
+                  }}
+                >
+                  Sair
+                </button>
               </li>
             </ul>
           </div>

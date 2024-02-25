@@ -1,4 +1,3 @@
-import AuthButton from "@/components/auth/AuthButton";
 import AuthHeader from "@/components/auth/AuthHeader";
 import { useRouter } from "next/navigation";
 import { PropsWithChildren, useEffect } from "react";

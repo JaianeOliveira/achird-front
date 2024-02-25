@@ -5,6 +5,7 @@ import "./globals.css";
 import { ConfigProvider } from "@/contexts/ConfigContext";
 import { ThemeProvider } from "@/contexts/ThemeContext";
 import { ModalProvider } from "@/contexts/ModalContext";
+import { Toaster } from "sonner";
 
 const raleway = Raleway({ subsets: ["latin"] });
 export const metadata: Metadata = {
@@ -22,7 +23,10 @@ export default function RootLayout({
       <body className={`${raleway.className} scroll-smooth`}>
         <ThemeProvider>
           <ConfigProvider>
-            <ModalProvider>{children}</ModalProvider>
+            <ModalProvider>
+              {children}
+              <Toaster richColors position="top-right" />
+            </ModalProvider>
           </ConfigProvider>
         </ThemeProvider>
       </body>

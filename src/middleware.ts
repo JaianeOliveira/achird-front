@@ -6,7 +6,9 @@ export default function middleware(request: NextRequest) {
   );
   const isPrivateRoute = ["/settings"].includes(request.nextUrl.pathname);
 
-  const token = request.cookies.get("achird-token")?.value;
+  const token = request.cookies.get("ACHIRD_TOKEN")?.value;
+
+  // TO DO: VALIDATE TOKEN
   const tokenIsValid = !!token;
 
   const isAuthenticated = token && tokenIsValid;
