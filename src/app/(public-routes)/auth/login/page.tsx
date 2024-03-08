@@ -1,8 +1,7 @@
 "use client";
-import { getCode, login } from "@/services/api/authService";
+import { login } from "@/services/api/authService";
 import { AxiosError } from "axios";
 import Cookies from "js-cookie";
-import Link from "next/link";
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
 import { useEffect, useState } from "react";
 import { FiLoader } from "react-icons/fi";
@@ -30,9 +29,9 @@ export default function Login() {
 
     try {
       const response = await login(code as string);
-      if (response.data.token) {
+      if (response.data.jwt_token) {
         toast.success("Login realizado com sucesso");
-        Cookies.set("ACHIRD_TOKEN", response.data.token, {
+        Cookies.set("ACHIRD_TOKEN", response.data.jwt_token, {
           expires: Date.now() + 4 * 60 * 60 * 1000,
         });
         router.replace("/settings");
@@ -64,9 +63,7 @@ export default function Login() {
         Entrar com o github
         {loading && <FiLoader className="animate-spin" />}
       </button>
-      <Link className="link link-primary text-sm mt-2" href="/auth/register">
-        Ainda não tem uma conta? Crie uma aqui
-      </Link>
+      
     </>
   );
 }
