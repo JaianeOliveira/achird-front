@@ -34,7 +34,7 @@ export default function Login() {
         Cookies.set("ACHIRD_TOKEN", response.data.jwt_token, {
           expires: Date.now() + 4 * 60 * 60 * 1000,
         });
-        router.replace("/settings");
+        router.refresh()
       }
     } catch (error) {
       if (error instanceof AxiosError)
@@ -56,6 +56,7 @@ export default function Login() {
       handleLogin(accessCode);
     }
   }, [accessCode]);
+
 
   return (
     <>

@@ -1,7 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 
 export default function middleware(request: NextRequest) {
-  const isAuthRoute = ["/auth/login", "/auth/register"].includes(
+  const isAuthRoute = ["/auth/login"].includes(
     request.nextUrl.pathname
   );
   const isPrivateRoute = ["/settings"].includes(request.nextUrl.pathname);
@@ -25,5 +25,5 @@ export default function middleware(request: NextRequest) {
 }
 
 export const config = {
-  matcher: ["/settings", "/auth/login", "/auth/register", "/"],
+  matcher: ["/settings", "/auth/login", "/"],
 };
