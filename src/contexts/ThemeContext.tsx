@@ -4,7 +4,7 @@ import { PropsWithChildren, useEffect, useState } from "react";
 
 export function ThemeProvider(props: PropsWithChildren) {
   const [mounted, setMounted] = useState<boolean>(false);
-
+  
   useEffect(() => {
     setMounted(true);
   }, []);
@@ -14,7 +14,7 @@ export function ThemeProvider(props: PropsWithChildren) {
   }
 
   return (
-    <NextThemeProvider enableSystem={true} attribute="data-theme">
+    <NextThemeProvider enableSystem={true} attribute="data-theme" >
       {props.children}
     </NextThemeProvider>
   );
