@@ -184,19 +184,17 @@ export default function SettingsPage() {
           Sua url é:{' '}
           <a
             className="link link-hover link-primary italic"
-            href={`${window?.location.origin}/to/${userData?.page_config?.slug}`}
+            href={`/to/${userData?.page_config?.slug}`}
             target="_blanks"
           >
-            {window?.location.origin}/to/{userData?.page_config?.slug}
+            /to/{userData?.page_config?.slug}
           </a>
         </p>
         <div className="tooltip" data-tip="Copiar link">
           <button
             className="btn btn-circle btn-sm"
             onClick={() => {
-              copy(
-                `${window?.location.origin}/to/${userData?.page_config?.slug}`
-              );
+              copy(`/to/${userData?.page_config?.slug}`);
               toast.success('Link copiado', { duration: 1000 });
             }}
           >
