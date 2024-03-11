@@ -1,11 +1,10 @@
-"use client";
-import { ConfigContext } from "@/contexts/ConfigContext";
-import Image from "next/image";
-import Link from "next/link";
-import { Sidebar } from "primereact/sidebar";
-import { PropsWithChildren, useContext } from "react";
-import AchirdLogo from "public/logo.svg";
-import Cookies from "js-cookie";
+'use client';
+import { ConfigContext } from '@/contexts/ConfigContext';
+import Cookies from 'js-cookie';
+import Image from 'next/image';
+import Link from 'next/link';
+import AchirdLogo from 'public/logo.svg';
+import { PropsWithChildren, useContext } from 'react';
 
 export default function PrivateLayout({ children }: PropsWithChildren) {
   const {
@@ -15,8 +14,8 @@ export default function PrivateLayout({ children }: PropsWithChildren) {
     toggleDarkModeIsActive,
   } = useContext(ConfigContext);
   const links = [
-    { title: "Configurações", to: "/settings" },
-    { title: "Minha página", to: "/to/me" },
+    { title: 'Configurações', to: '/settings' },
+    { title: 'Minha página', to: '/to/me' },
   ];
   return (
     <>
@@ -42,15 +41,16 @@ export default function PrivateLayout({ children }: PropsWithChildren) {
               className="mt-3 z-[1] p-2 shadow menu menu-sm dropdown-content bg-base-200 rounded-box w-52"
             >
               <li>
-                <a>Configurações</a>
+                <Link href="/settings">Configurações</Link>
               </li>
               <li>
-                <a>Minha página</a>
+                <Link href="/to/me">Minha página</Link>
               </li>
               <li>
                 <button
                   onClick={() => {
-                    Cookies.remove("ACHIRD_TOKEN");
+                    Cookies.remove('ACHIRD_TOKEN');
+                    Cookies.remove('ACHIRD_SLUG');
                     window && window.location.reload();
                   }}
                 >

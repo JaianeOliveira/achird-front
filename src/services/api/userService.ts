@@ -27,3 +27,5 @@ export const updatePageData = async (token: string) => await api.put("/page-conf
         Authorization: `Bearer ${token}`,
     }
 })
+
+export const getPageData = async (slug: string) => await api.get(`/user/${slug}`)

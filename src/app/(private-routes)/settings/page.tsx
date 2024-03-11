@@ -31,11 +31,13 @@ export default function SettingsPage() {
       );
       setUserData(response.data);
       setState('content');
+      Cookies.set('ACHIRD_SLUG', response.data.slug);
     } catch (error) {
       setState('error');
       router.replace('/auth/login');
       toast.error('Algo deu errado');
       Cookies.remove('ACHIRD_TOKEN');
+      Cookies.remove('ACHIRD_SLUG');
     }
   };
 
@@ -265,9 +267,9 @@ export default function SettingsPage() {
                 achird
               </h3>
               <p className="py-4 text-sm font-normal">
-                Acesse seu github, e, na página do seu projeto, adicione a tag
-                &quot;view-on-achird&quot;. Depois, volte para o Achird e faça
-                login novamente e seus dados atualizados serão exibidos.
+                Acesse seu github, e, na página do seu projeto, adicione o
+                tópico &quot;view-on-achird&quot;. Depois, volte para o Achird e
+                faça login novamente e seus dados atualizados serão exibidos.
               </p>
               <div className="modal-action">
                 <form method="dialog">
