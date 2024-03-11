@@ -184,17 +184,19 @@ export default function SettingsPage() {
           Sua url é:{' '}
           <a
             className="link link-hover link-primary italic"
-            href={`/to/${userData?.page_config?.slug}`}
+            href={`https://achird-xi.vercel.app/to/${userData?.page_config?.slug}`}
             target="_blanks"
           >
-            /to/{userData?.page_config?.slug}
+            https://achird-xi.vercel.app/to/{userData?.page_config?.slug}
           </a>
         </p>
         <div className="tooltip" data-tip="Copiar link">
           <button
             className="btn btn-circle btn-sm"
             onClick={() => {
-              copy(`/to/${userData?.page_config?.slug}`);
+              copy(
+                `https://achird-xi.vercel.app/to/${userData?.page_config?.slug}`
+              );
               toast.success('Link copiado', { duration: 1000 });
             }}
           >
