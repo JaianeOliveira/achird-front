@@ -1,8 +1,10 @@
 import { ConfigProvider } from "@/contexts/ConfigContext";
 import { ModalProvider } from "@/contexts/ModalContext";
 import { ThemeProvider } from "@/contexts/ThemeContext";
+import { Analytics } from '@vercel/analytics/react';
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import type { Metadata } from "next";
+
 import { Raleway } from "next/font/google";
 import { Toaster } from "sonner";
 import "./globals.css";
@@ -29,6 +31,7 @@ export default function RootLayout({
             </ModalProvider>
           </ConfigProvider>
         </ThemeProvider>
+        <Analytics />
         <SpeedInsights />
       </body>
     </html>
