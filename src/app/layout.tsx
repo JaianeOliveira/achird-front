@@ -1,11 +1,11 @@
+import { ConfigProvider } from "@/contexts/ConfigContext";
+import { ModalProvider } from "@/contexts/ModalContext";
+import { ThemeProvider } from "@/contexts/ThemeContext";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 import type { Metadata } from "next";
 import { Raleway } from "next/font/google";
-import "./globals.css";
-
-import { ConfigProvider } from "@/contexts/ConfigContext";
-import { ThemeProvider } from "@/contexts/ThemeContext";
-import { ModalProvider } from "@/contexts/ModalContext";
 import { Toaster } from "sonner";
+import "./globals.css";
 
 const raleway = Raleway({ subsets: ["latin"] });
 export const metadata: Metadata = {
@@ -29,6 +29,7 @@ export default function RootLayout({
             </ModalProvider>
           </ConfigProvider>
         </ThemeProvider>
+        <SpeedInsights />
       </body>
     </html>
   );
