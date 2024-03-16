@@ -27,7 +27,7 @@ export default async function Page() {
           </p>
         </section>
 
-        <section className="px-16 lg:px-32 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 ">
+        <section className="px-16 lg:px-32 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:git-cols-4 gap-8 ">
           {users.data.map(
             (user: {
               github_id: string;
