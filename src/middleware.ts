@@ -1,9 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 
 export default function middleware(request: NextRequest) {
-  const isAuthRoute = ["/auth/login"].includes(
-    request.nextUrl.pathname
-  );
+  const isAuthRoute = ["/auth/login"].includes(request.nextUrl.pathname);
   const isPrivateRoute = ["/settings"].includes(request.nextUrl.pathname);
 
   const token = request.cookies.get("ACHIRD_TOKEN")?.value;
@@ -25,5 +23,5 @@ export default function middleware(request: NextRequest) {
 }
 
 export const config = {
-  matcher: ["/settings", "/auth/login", "/"],
+  matcher: ["/settings", "/auth/login"],
 };
