@@ -1,8 +1,8 @@
-import { ThemeHandler } from '@/components/ThemeHandler';
-import { getPageData } from '@/services/api/userService';
-import Image from 'next/image';
-import Link from 'next/link';
-import AchirdLogo from 'public/logo.svg';
+import { ThemeHandler } from "@/components/ThemeHandler";
+import { getPageData } from "@/services/api/userService";
+import Image from "next/image";
+import Link from "next/link";
+import AchirdLogo from "public/logo.svg";
 
 async function getData(slug: string) {
   const data = await fetch(`https://api.github.com/users/${slug}`).then((res) =>
@@ -15,7 +15,7 @@ async function getData(slug: string) {
 async function mockData() {
   const promise = new Promise((resolve) => {
     setTimeout(() => {
-      resolve({ name: 'John Doe' });
+      resolve({ name: "John Doe" });
     }, 3000);
   });
 
@@ -129,6 +129,11 @@ export default async function Profile({
               <h2 className="text-3xl mb-4 font-bold text-center lg:text-start">
                 Projetos
               </h2>
+              {!data.repositories.length && (
+                <p className="italic opacity-50 text-center lg:text-start">
+                  Nenhum projeto sendo exibido
+                </p>
+              )}
               <div className="flex carousel carousel-center gap-4 overflow-x-scroll scrollbar  max-w-screen rounded-box">
                 {data.repositories.map((repo: any, index: number) => (
                   <div
@@ -239,7 +244,7 @@ export default async function Profile({
             <aside className="flex gap-2">
               <strong>Achird</strong>
               <p>
-                Created by{' '}
+                Created by{" "}
                 <a
                   className="link underline-offset-2"
                   href="https://github.com/jaianeoliveira"

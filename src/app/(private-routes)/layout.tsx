@@ -1,10 +1,10 @@
-'use client';
-import { ConfigContext } from '@/contexts/ConfigContext';
-import Cookies from 'js-cookie';
-import Image from 'next/image';
-import Link from 'next/link';
-import AchirdLogo from 'public/logo.svg';
-import { PropsWithChildren, useContext } from 'react';
+"use client";
+import { ConfigContext } from "@/contexts/ConfigContext";
+import Cookies from "js-cookie";
+import Image from "next/image";
+import Link from "next/link";
+import AchirdLogo from "public/logo.svg";
+import { PropsWithChildren, useContext } from "react";
 
 export default function PrivateLayout({ children }: PropsWithChildren) {
   const {
@@ -14,8 +14,8 @@ export default function PrivateLayout({ children }: PropsWithChildren) {
     toggleDarkModeIsActive,
   } = useContext(ConfigContext);
   const links = [
-    { title: 'Configurações', to: '/settings' },
-    { title: 'Minha página', to: '/to/me' },
+    { title: "Configurações", to: "/settings" },
+    { title: "Minha página", to: "/to/me" },
   ];
   return (
     <>
@@ -33,7 +33,7 @@ export default function PrivateLayout({ children }: PropsWithChildren) {
               className="btn btn-ghost btn-circle avatar placeholder"
             >
               <div className="flex items-center justify-center bg-neutral text-neutral-content rounded-full p-3">
-                <p className="text-center font-bold">FD</p>
+                <p className="text-center font-bold">US</p>
               </div>
             </div>
             <ul
@@ -41,16 +41,10 @@ export default function PrivateLayout({ children }: PropsWithChildren) {
               className="mt-3 z-[1] p-2 shadow menu menu-sm dropdown-content bg-base-200 rounded-box w-52"
             >
               <li>
-                <Link href="/settings">Configurações</Link>
-              </li>
-              <li>
-                <Link href="/to/me">Minha página</Link>
-              </li>
-              <li>
                 <button
                   onClick={() => {
-                    Cookies.remove('ACHIRD_TOKEN');
-                    Cookies.remove('ACHIRD_SLUG');
+                    Cookies.remove("ACHIRD_TOKEN");
+                    Cookies.remove("ACHIRD_SLUG");
                     window && window.location.reload();
                   }}
                 >
