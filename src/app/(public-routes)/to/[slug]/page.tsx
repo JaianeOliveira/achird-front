@@ -46,10 +46,12 @@ export default async function Profile({
 
         <div className="drawer-content scroll-smooth">
           <header className="navbar px-8 md:px-16 lg:px-32 py-4 flex items-center justify-between gap-8">
-            <div className="flex gap-2">
-              <Image src={AchirdLogo} alt="Logo" height={44} />
-              <h1 className="text-xl  font-bold">Achird</h1>
-            </div>
+            <Link href={"/"}>
+              <div className="flex gap-2">
+                <Image src={AchirdLogo} alt="Logo" height={44} />
+                <h1 className="text-xl  font-bold">Achird</h1>
+              </div>
+            </Link>
             <nav className="hidden lg:flex flex-1 justify-center items-center">
               <ul className="flex items-end gap-4  text-sm font-semibold">
                 <li>
