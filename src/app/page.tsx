@@ -1,11 +1,21 @@
+"ise client"
+
 import { ThemeHandler } from "@/components/ThemeHandler";
 import { listUsers } from "@/services/api/userService";
 import Image from "next/image";
 import Link from "next/link";
 import AchirdLogo from "public/logo.svg";
+import { useEffect, useState } from "react";
 
-export default async function Page() {
-  const users = await listUsers();
+export default function Page() {
+  const [users, setUsers] = useState<any[]>([]);
+
+  useEffect(() => {
+    (async () => {
+      const users = await listUsers();
+      setUsers(users.data);
+    })()
+  },[ ])
   return (
     <ThemeHandler theme="achird-dark">
       <div>
@@ -28,7 +38,7 @@ export default async function Page() {
         </section>
 
         <section className="px-16 lg:px-32 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:git-cols-4 gap-8 ">
-          {users.data.map(
+          {users.map(
             (user: {
               github_id: string;
               name: string;
