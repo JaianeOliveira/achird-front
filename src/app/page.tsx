@@ -1,4 +1,4 @@
-"ise client"
+"use client"
 
 import { ThemeHandler } from "@/components/ThemeHandler";
 import { listUsers } from "@/services/api/userService";
